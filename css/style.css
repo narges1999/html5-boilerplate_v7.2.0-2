@@ -268,25 +268,39 @@ html {
   box-sizing: border-box;
   font-family: arial, helvetica, sans-serif;
   width: 100%;
+
   
+  /* CSS FÖR INDEX */
 }
 
  body {
 	background:#FFFFFF;
 	padding: top right bottom left;
 	margin: 0;
-	overflow-x: hidden; */
+	overflow-x: hidden; 
+  line-height: 1.5;
+   
 } 
 
+/*logga*/
 .logo {
 	width: 4rem;
     padding: 1em;
+ grid-column: 1;
+  
+
+}
+/* bakgrundsbild (flygplan) */
+.home-body {
+  background-image: url(https://image.freepik.com/free-photo/airplane-flying-cloudy-sky_144627-132.jpg);
+  background-size: cover;
+
 
 }
 
 h1 {
 
-   color:black;
+  color:black;
 	text-align:left;
 	margin-top: 2em;
 	top:-50px;	
@@ -295,40 +309,59 @@ h1 {
 
 }
 
-h3 {
-  color: black; 
-  text-align: right;
-  float: right; 
-  left: 2rem;
-  margin-right: 10em;
+}
+
+.header {
+   padding-right: 1%;
+  padding-left: 0px;
+  margin: auto;
+  
+  
+}
+
+.slogan {
+  font-size: 50px;
+  color: black;
+  text-align: left;
+}
+/* rubrik "Resor och Hotell till låga priser */
+.rubrik {
+  font-size: 30px;
+  color: black;
+  text-align: left;
+  margin-top: 0em;
 
 }
 
-p {
+p /* slogan */{
 
-    color:black;
+  color:black;
 	text-align:left;
 	margin-top: 3em;
 	top:1rem;	
 	left:400px;
-	font-size:30px;
+	font-size:40px;
 	width: 100%;
 
 }
 
-.btn {
-color: black; 
-background:black;
-color: #FFF;
-padding: 0.6rem 1.3rem;
-text-decoration: none;
-border: 0;
-font-size:20px;
-text-align:right;
-margin-left: 64em;
-right:1rem;
-position: relative;
-bottom: 70px;
+.knapp /* vid höger sida */{
+  color: white; 
+  background-color: black;
+  text-align: right;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: auto;
+  left: 60px; 
+  float: right;
+    border-radius: 5px;
+  border-style: none;
+  margin-top: -5em;
+  margin-right: 60px; 
+  padding: 1rem 2rem;
+
+  
 }
 
 body, html {
@@ -338,36 +371,24 @@ body, html {
   font-family: arial;
 }
 
-.container {
-  position: relative;
-  text-align: center;
-  color: black;
+/*Knapp nedanför "Resor och hotell för låga priser" samt för "boka" knappen i hotell och flyg */
+.btn {
+text-align: start; 
+background:black;
+color: #FFF;
+padding: 0.6rem 1.3rem;
+text-decoration: none;
+border: 0;
+justify-content: left;
+font-size:20px;
+margin:4px;
+text-align:center;
+ cursor: pointer;
 
-  }
 
-/* Top left text */
-.top-left {
-  position: absolute;
-  color: white;
-  top: 3rem;
-  left: 40px;
-  font-size: 50px;
-  line-height: 13em;
-  text-align: 20em;
-  margin-right: 4px;
- }
-
-/*Knapp nedanför "Resor till billiga priser" */
-section .btn {
-color: black; 
-background:white;
-color: black;
-margin-left: -1200px;
-text-align: 20em;
-position: relative;
-bottom: 525px;
-right: 1em;
 }
+
+/*navigering*/
 
 .nav {
 background-color: white;
@@ -382,6 +403,22 @@ font-size: 130%;
 display: inline-block;
 padding-right: 80px;
 background-color: white;
+grid-column: auto;
+
+}
+
+.nav-list {
+  color:black;
+  grid-column: auto;
+  padding:20px 15px 20px 15px;
+  margin: 0px;
+  font-size: 30px;
+  grid-column: auto;
+  list-style: none;
+  text-decoration: none;
+  display: inline;
+  text-align: center;
+}
 
 }
 
@@ -391,30 +428,45 @@ color:black;
 margin:20px;
 }
 
-
-
-
-
-    /*padding: 0;
-    box-sizing: border-box;
-	list-style: none;
-	grid-template-columns: repeat(5, 1fr)
-	display: block;
-	padding: 0;
-	margin: 0;
-	background-color: white; 
-	text-align: center;
-	font-size: 1.1rem;
-	color: black;*/
 } 
+
+}
+
+}
 
 * {
   box-sizing: border-box;
+
 }
+
+
+@media only screen and (max-width: 768px)
+{
+  .logo
+  {
+    height: 80px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 768px)
+{
+  .mobile_dropdown
+  {
+
+}
+
+@media screen and (min-width: 800px)
+{
+  #kontakt
+  {
+
+}
+
 
 /*CSS FÖR SIDAN KONTAKT*/
 
-/* Style inputs */
+/* ruta för att skriva in namn och efternamn */
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -423,7 +475,7 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
+/* ruta för att skicka ämne */
 input[type=submit] {
   background-color: #87CEEB;
   color: white;
@@ -436,14 +488,15 @@ input[type=submit]:hover {
   background-color: #ADD8E6;
 }
 
-/* Style the container/contact section */
+/* Style för kontakt */
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
+  display: grid;
 }
 
-/* Create two columns that float next to eachother */
+
 .column {
   float: left;
   width: 45%;
@@ -456,65 +509,59 @@ input[type=submit]:hover {
 
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
+h1 {
 
-@media screen and (max-width: 600px) {
+text-align: center;
+margin-top: 10px; 
+}
+
+@media screen and (max-width: 200px) {
   .column, input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
 }
 
-h1 {
-
-text-align: center;
-margin-top: 10px;
-
 }
 /*CSS FÖR SIDAN OM OSS*/
 
-.showcase-about{
-  
-  min-height: 500px;
-  background: url(https://image.freepik.com/free-photo/seascape-abstract-beach-background_1484-2000.jpg);
-    background-size: cover;
-    padding: 3rem;
-    text-align: left;   
-    font-size: 4px; 
+    
 }
+
+/*style för all text*/
 
 .showcase-about h1{
   color:black;
   text-align:center;
-  margin-top: 1em;
-  top:50px;  
+  margin-top: 1px;
+  top:2px;  
   right:-800px;
-  font-size:30px;
+  font-size:40px;
 }
 
-.showcase-about article {
+.showcase-about article 
+h2
+h3
+h4 {
   grid-area: article;
-  margin-top: 7em;
+  margin-top: 5em;
+  font-size: 50px;
 }
 
-/*.showcase-about p{
-  color:#FFF;
-  text-align:center;
-  position:relative;
-  top:70px;
-  padding:10px;
-  letter-spacing: 1.5px;
-  line-height:40px;*/
 }
 
-#about-text p {
+#about-text p 
+h2
+h3
+h4 {
   grid-area: article;
+  font-size: 60px;
   margin-top: 10em;
   color:#FFF;
   line-height: 10em
@@ -522,9 +569,10 @@ margin-top: 10px;
   top:10px;
   left:400px;
   text-align:center;
-  position:relative;
+  
 
 }
+/*style för copyright/fotnot*/
 
 footer.fotnot {
  background: white;
@@ -543,6 +591,7 @@ footer.fotnot {
 
 p {
 
+color: black;
 font: 20px times;
 text-align: center;
 padding-top: 10px;
@@ -550,162 +599,118 @@ padding-bottom: -10rem;
 line-height: 1em;
 }
 
-/*CSS FÖR SIDAN MIN SIDA OCH HOTELL OCH RESMÅL*/
+
+/* CSS FÖR SIDAN HOTELL OCH FLYG */
 
 
-
-/* Coloring time */
-h2 span /* dekorerar inom span taggen */{ 
-color: white; 
-font: bold 24px/45px Helvetica, Sans-Serif; 
-letter-spacing: 3px; 
-background: rgb(0, 0, 0); /* fallback color */ 
-background: rgba(0, 0, 0, 0.7); padding: 10px; 
-
-
-
-
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1em 0;
+  text-align: left;
+}
 
-.boxhotel {
-    background: white;
-    color: black;
-    border-radius: 10px;
-    padding: 5%;
-    transition: transform .2s;
-    background-color: beige;
-    background-repeat: repeat-y;
-    background-repeat: space;
-    background: url(https://image.freepik.com/free-photo/folded-towels-bed_1203-973.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+p {
+
+    margin: 0;
+  padding: 1em 0;
+  text-align: left;
+
+}
+/* Header Showcase */
+
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center;
+}
+
+/* bakgrundsbild för bägge sidorna */
+
+#showcase .bg-image {
+  position: absolute;
+  background: #333
+    url(https://image.freepik.com/free-photo/swimming-pool_74190-6509.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-   
-}
-.boxhotel:hover{
-    transform: scale(1.03);
-}
-.Hotelheader {
-    grid-column: 2;
-    grid-row: 2;
-    text-align: center;
-    font-size: 100%;
-}
-.hotel1{
-    grid-column: 1;
-    grid-row: 3;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    font-size: 80%;
-    
-}
-.hotel2{
-    grid-column: 2;
-    grid-row: 3;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    font-size: 80%;
-}
-.hotel3{
-    grid-column: 3;
-    grid-row: 3;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    font-size: 80%;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.4;
 }
 
-.hotelbild{
-    border-radius: 5px 5px 0px 0px;
-    padding:0px;
-    margin:0px;
-}
-.hoteltext{
-    border-top:2px solid rgb(89, 187, 194);
-}
-h4{
-    margin:0;
-    padding:0;
-    font-size: 30px;
+
+/* sektion A (kolumn 1)*/
+
+#section-a {
+  background: #eaeaea;
+  color: #333;
+  padding-bottom: 2em;
 }
 
-h5 {
-   margin: 0;
-   padding: 0;
-   font-size: 17px;
+/* sektion B (kolumn 2) */
 
-
+#section-b {
+  padding: 2em 1em 1em;
 }
 
-h6 {
-   margin: 0;
-   padding:15px;
-   font-size: 13px;
-
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-@media (max-width: 1000px) 
-{
-.Hotelheader {
-    grid-column: 1/3;
-    grid-row: 2;
-    text-align: center;
-    font-size: 90%;
-}
-.hotel1{
-    grid-column: 1;
-    grid-row: 3;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    font-size: 80%;
-    margin: 2% 1.5% 1.5% 3%;
-}
-.hotel2{
-    grid-column: 2;
-    grid-row: 3;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    font-size: 80%;
-    margin: 2% 3% 1.5% 1.5%;
-}
-.hotel3{
-    grid-column: 1;
-    grid-row: 4;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    font-size: 80%;
-    margin: 2% 1.5% 1.5% 3%;
+#section-b li {
+  margin-bottom: 1em;
+  background: #fff;
+  color: #333;
 }
 
-.hotelbild{
-    border-radius: 5px 5px 0px 0px;
-    padding:0px;
-    margin:0px;
+.card-content {
+  padding: 1.5em;
 }
-.hoteltext{
-    border-top:2px solid rgb(89, 187, 194);
-    text-align: start;
-    padding: 0% 5% 0% 5%;
-}
-h4{
-    margin:0;
-    padding:0;
-}
-.hotelfooter {
-      grid-column: 1/3;
-      grid-row: 6;
-      font-size: 80%;
-      text-align: center;
-      padding: 0px 5px 5px 5px;
-      margin-bottom: 25px;
-      height: 10px;
-      color: black;
-     }
+
+/* Media Queries */
+
+@media (min-width: 700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+
+  #section-a .content-text {
+    columns: 2;
+    column-gap: 2em;
+  }
+
+  #section-a .content-text p {
+    padding-top: 0;
+  }
+
+  .content-wrap,
+  #section-b ul {
+    grid-column: 2/4;
+  }
+
+  .box,
+  #main-footer div {
+    grid-column: span 2;
+  }
+
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #section-b li {
+    width: 31%;
+  }
 }
